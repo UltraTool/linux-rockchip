@@ -407,7 +407,7 @@
 			rockchip,resistor-sense-micro-ohms = <10000>;
 			rockchip,sleep-enter-current-microamp = <150000>;
 			rockchip,sleep-filter-current-microamp = <50000>;
-		}
+		};
 
 		rk817_codec: codec {
 			#sound-dai-cells = <0>;

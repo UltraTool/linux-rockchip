@@ -102,29 +102,16 @@
 	cpu-supply = <&vdd_cpu>;
 };
 
-&dfi {
-	status = "okay";
+&cpu1 {
+	cpu-supply = <&vdd_cpu>;
 };
 
-&dmc {
-	center-supply = <&vdd_logic>;
-	status = "okay";
+&cpu2 {
+	cpu-supply = <&vdd_cpu>;
 };
 
-&rkcif {
-	status = "okay";
-};
-
-&rkcif_mmu {
-	status = "okay";
-};
-
-&rkisp {
-	status = "okay";
-};
-
-&rkisp_mmu {
-	status = "okay";
+&cpu3 {
+	cpu-supply = <&vdd_cpu>;
 };
 
 &gpu {
@@ -143,7 +130,6 @@
 	vccio6-supply = <&vcc_3v3>;
 	vccio7-supply = <&vcc_3v3>;
 };
-
 
 &i2c0 {
 	status = "okay";
@@ -432,7 +418,6 @@
 	vref-supply = <&vcc_1v8>;
 };
 
-
 &sdmmc1 {
 	#address-cells = <1>;
 	#size-cells = <0>;
@@ -485,26 +470,6 @@
 		pinctrl-0 = <&bt_host_wake_h &bt_reg_on_h &bt_wake_host_h>;
 		vbat-supply = <&vcc_3v3>;
 		vddio-supply = <&vcc_1v8>;
-	};
-};
-
-&sfc {
-	status = "okay";
-	max-freq = <50000000>;
-	#address-cells = <1>;
-	#size-cells = <0>;
-	pinctrl-names = "default";
-	pinctrl-0 = <&fspi_pins>;
-
-	spi_flash: spi-flash@0 {
-		#address-cells = <1>;
-		#size-cells = <0>;
-		compatible = "jedec,spi-nor";
-		reg = <0x0>;
-		spi-max-frequency = <50000000>;
-		spi-tx-bus-width = <1>;
-		spi-rx-bus-width = <4>;
-		status = "okay";
 	};
 };
 
@@ -599,32 +564,6 @@
 
 &pcie2x1 {
 	status = "disabled";
-};
-
-&vdpu {
-	status = "okay";
-};
-
-&vdpu_mmu {
-	status = "okay";
-};
-
-&vepu {
-	status = "okay";
-};
-
-&vepu_mmu {
-	status = "okay";
-};
-
-&vop {
-	status = "okay";
-	assigned-clocks = <&cru DCLK_VOP0>, <&cru DCLK_VOP1>;
-	assigned-clock-parents = <&pmucru PLL_HPLL>, <&cru PLL_VPLL>;
-};
-
-&vop_mmu {
-	status = "okay";
 };
 
 &pinctrl {

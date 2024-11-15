@@ -522,13 +522,13 @@
 };
 
 &hdmi_sound {
-	status = "okay";
+	status = "disabled";
 };
 
-&route_hdmi {
-	status = "okay";
-	connect = <&vp0_out_hdmi>;
-};
+// &route_hdmi {
+// 	status = "okay";
+// 	connect = <&vp0_out_hdmi>;
+// };
 
 &sdmmc0 {
 	max-frequency = <150000000>;
@@ -578,18 +578,6 @@
 	status = "okay";
 };
 
-// &i2c2 {
-// 	status = "okay";
-// 	hym8563: hym8563@51 {
-// 		compatible = "haoyu,hym8563";
-// 		status = "okay";
-// 		reg = <0x51>;
-// 		#clock-cells = <0>;
-// 		clock-frequency = <32768>;
-// 		clock-output-names = "hym8563";
-// 	};
-// };
-
 &i2c2 {
 	status = "okay";
 	pinctrl-0 = <&i2c2m1_xfer>;
@@ -608,6 +596,15 @@
 		max-y = <1280>;
 		tp-size = <9112>;
 		tp-supply = <&vcc_lcd_tp>;
+	};
+
+	hym8563: hym8563@51 {
+		compatible = "haoyu,hym8563";
+		status = "okay";
+		reg = <0x51>;
+		#clock-cells = <0>;
+		clock-frequency = <32768>;
+		clock-output-names = "hym8563";
 	};
 };
 
